@@ -1,8 +1,72 @@
-((("nxhtml-mode-hook" .
+((("ecb-activate" .
+   [0 0 0 0 0 0 0 1 0 0 0 0])
+  ("ibuffer" .
+   [0 0 1 1 0 0 0])
+  ("redo" .
+   [7 0 1 0])
+  ("global-set-key" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 3])
+  ("nxhtml-mode-hook" .
    [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
   ("Category" .
    [0 0 0 0 0 0 0 1])
   ("color-theme-comidia" .
    [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
   ("eruby-nxhtml-mumamo-mode-hook" .
-   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])))
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("copy-seq" .
+   [0 0 0 0 1 0 0 0])
+  ("clipboard-kill-ring-save" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("clipboard-yank" .
+   [0 0 0 0 1 0 0 0 0 0 1 0 0 0])
+  ("require" .
+   [3 0 0 0 1 0 0])
+  ("undo" .
+   [1 0 0 0])
+  ("woman" .
+   [0 0 1 0 0])
+  ("de" .
+   [1 0])
+  ("kbd" .
+   [1 0 0])
+  ("add-to-list" .
+   [0 0 0 0 0 0 0 0 0 0 1])
+  ("load-path" .
+   [0 0 0 0 0 0 1 0 0])
+  ("tabbar" .
+   [0 0 0 0 2 0])
+  ("set-face-attribute" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 4])
+  ("tabbar-default-face" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("nil" .
+   [5 0 0])
+  (":family" .
+   [1 0 0 0 2 0 1])
+  (":background" .
+   [0 0 0 0 0 4 0 0 0 1 0])
+  (":foreground" .
+   [1 0 0 0 1 0 0 0 0 0 2])
+  (":height" .
+   [1 0 0 0 0 0 0])
+  ("set" .
+   [2 0 0])
+  ("tabbar-unselected" .
+   [0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0])
+  (":inherit" .
+   [0 0 0 0 1 0 0 2])
+  ("tabbar-default" .
+   [0 0 0 0 0 0 0 1 0 2 1 1 0 0])
+  (":box" .
+   [3 0 0 0])
+  ("tabbar-button" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0])
+  (":color" .
+   [2 0 0 0 0 0])
+  (":face" .
+   [1 0 0 1 0])
+  ("tabbar-selected" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
+  ("menu-bar-mode" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0])))

@@ -1,3 +1,4 @@
+;;(menu-bar-mode nil);;去掉菜单栏
 (tool-bar-mode nil);;去掉工具栏
 (scroll-bar-mode nil);;去掉滚动条
 
@@ -35,6 +36,10 @@
 (add-to-list 'load-path
 	     "~/.emacs.d/plugins/ecb-2.40")
 (load-file "~/.emacs.d/plugins/ecb-2.40/ecb.el")
+(global-set-key "\C-cd" 'ecb-goto-window-directories)
+(global-set-key "\C-c1" 'ecb-goto-window-edit1)
+(global-set-key "\C-c2" 'ecb-goto-window-edit2)
+(global-set-key "\C-h" 'ecb-goto-window-history)
 
 (custom-set-variables
  '(warning-minimum-level :error);;解决nxhtml erb的warn问题
@@ -57,6 +62,17 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/auto-complete-1.3.1/ac-dict")
 (ac-config-default)
+
+;;tabbar
+(add-to-list 'load-path "~/.emacs.d/plugins/tabbar")
+(require 'tabbar)
+(tabbar-mode 1)
+(set-face-attribute 'tabbar-default nil
+:family "DejaVu Sans Mono")
+(set-face-attribute 'tabbar-unselected nil
+:foreground "white" :background "DarkGreen")
+(set-face-attribute 'tabbar-selected nil
+:foreground "DarkGreen" :background "LightGoldenrod")
 
 ;;yaml-mode
 (add-to-list 'load-path "~/.emacs.d/plugins/yaml-mode")
@@ -81,7 +97,20 @@
 (require 'zencoding-mode)
 (add-hook 'nxhtml-mode-hook 'zencoding-mode)
 
+;;快捷键
+(global-set-key "\C-c\C-c" 'clipboard-kill-ring-save);;复制
+(global-set-key "\C-c\C-v" 'clipboard-yank);;粘贴
 
-;;buffer上下翻动快捷键
-(global-set-key "\M-p" 'bs-cycle-previous);;上一个buffer
-(global-set-key "\M-n" 'bs-cycle-next);;下一个buffer
+(global-set-key "\C-z" 'undo);;撤销
+
+;;多窗口跳转 按下 Ctrl+c 后 跟相应的 字母键
+(global-set-key (kbd "M-<left>") 'windmove-left );;跳转到左面的窗口
+(global-set-key (kbd "M-<right>") 'windmove-right );;跳转到右面的窗口
+(global-set-key (kbd "M-<top>") 'windmove-up );;跳转到上面的窗口
+(global-set-key (kbd "M-<down>") 'windmove-down );;跳转到下面的窗口
+
+(global-set-key "\C-x\C-b" 'ibuffer);;用ibuffer替换原来的buffer选择窗口好看些
+
+(global-set-key "\C-cg" 'goto-line);;跳转到第 行
+
+(global-set-key (kbd "<f12>") 'ecb-activate);;打开ecb
