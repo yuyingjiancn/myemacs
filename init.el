@@ -74,12 +74,12 @@
  indent-region-mode t
  rng-nxml-auto-validate-flag nil
  nxml-degraded t)
-(add-to-list 'auto-mode-alist '(".html.erb$" . eruby-nxhtml-mumamo-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-nxhtml-mumamo-mode))
 (yas/define-snippets 'nxhtml-mode nil 'html-mode)
 
 (add-to-list 'load-path "~emacs.d/zencoding")
 (require 'zencoding-mode)
-(add-hook 'sqml-mode-hock 'zencoding-mode)
+(add-hook 'nxhtml-mode-hook 'zencoding-mode)
 
 
 ;;buffer上下翻动快捷键

@@ -1,2 +1,8 @@
-((("color-theme-comidia" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])))
+((("nxhtml-mode-hook" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("Category" .
+   [0 0 0 0 0 0 0 1])
+  ("color-theme-comidia" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("eruby-nxhtml-mumamo-mode-hook" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])))
