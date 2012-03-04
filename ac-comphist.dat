@@ -1,11 +1,27 @@
-((("ecb-activate" .
+((("setq" .
+   [1 0 0 0])
+  ("goto-line" .
+   [0 0 0 0 0 1 0 0 0])
+  ("global-" .
+   [0 0 0 0 0 0 1])
+  ("ecb-goto-window-history" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("ecb-goto-window-edit2" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("ecb-goto-window-edit1" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
+  ("ecb-goto-window-directories" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("ecb-directories" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("ecb-activate" .
    [0 0 0 0 0 0 0 1 0 0 0 0])
   ("ibuffer" .
    [0 0 1 1 0 0 0])
   ("redo" .
    [7 0 1 0])
   ("global-set-key" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 3])
+   [0 0 0 0 0 0 0 0 0 0 2 0 0 6])
   ("nxhtml-mode-hook" .
    [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
   ("Category" .
@@ -21,7 +37,7 @@
   ("clipboard-yank" .
    [0 0 0 0 1 0 0 0 0 0 1 0 0 0])
   ("require" .
-   [3 0 0 0 1 0 0])
+   [3 0 0 0 2 0 0])
   ("undo" .
    [1 0 0 0])
   ("woman" .
@@ -31,9 +47,9 @@
   ("kbd" .
    [1 0 0])
   ("add-to-list" .
-   [0 0 0 0 0 0 0 0 0 0 1])
+   [1 0 0 0 0 0 0 0 0 0 1])
   ("load-path" .
-   [0 0 0 0 0 0 1 0 0])
+   [0 0 0 0 0 0 2 0 0])
   ("tabbar" .
    [0 0 0 0 2 0])
   ("set-face-attribute" .
@@ -69,4 +85,10 @@
   ("tabbar-selected" .
    [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
   ("menu-bar-mode" .
-   [0 0 0 0 1 0 0 0 0 0 0 0 0])))
+   [0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("Event" .
+   [1 0 0 0 0])
+  ("line" .
+   [1 0 0 0])
+  ("each" .
+   [1 0 0 0])))
