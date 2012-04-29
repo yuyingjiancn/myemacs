@@ -33,14 +33,14 @@
 (color-theme-initialize)
 (color-theme-comidia)
 
-(load-file "~/.emacs.d/plugins/cedet-1.0.1/common/cedet.el")
+(load-file "~/.emacs.d/plugins/cedet-1.1/common/cedet.el")
 (global-ede-mode 1);Enable the Project management system
 (semantic-load-enable-code-helpers);Enable prototype help and smart completion
 (global-srecode-minor-mode 1);Enable template insertion menu
 
 (add-to-list 'load-path
-	     "~/.emacs.d/plugins/ecb-2.40")
-(load-file "~/.emacs.d/plugins/ecb-2.40/ecb.el")
+	     "~/.emacs.d/plugins/ecb-snap")
+(load-file "~/.emacs.d/plugins/ecb-snap/ecb.el")
 (global-set-key "\C-cd" 'ecb-goto-window-directories)
 (global-set-key "\C-c1" 'ecb-goto-window-edit1)
 (global-set-key "\C-c2" 'ecb-goto-window-edit2)

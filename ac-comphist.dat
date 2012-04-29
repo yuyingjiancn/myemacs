@@ -1,4 +1,10 @@
-((("info" .
+((("ecb-cedet-required-version-max" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("ecb-cedet-required-version-min" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("defconst" .
+   [2 0 0 0 0 0 0 1])
+  ("info" .
    [1 0 0 0])
   ("logger" .
    [1 0 0 0 0 0])
