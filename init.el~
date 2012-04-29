@@ -6,13 +6,13 @@
 (require 'linum)
 (global-linum-mode t)
 
-;;字体Mono 大小14pt
+;;字体Mono 大小12pt
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:height 140 :family "DejaVu Sans Mono")))))
+ '(default ((t (:height 120 :family "DejaVu Sans Mono")))))
 
 ;LANG  
 (set-language-environment 'Chinese-GB)  
@@ -55,7 +55,6 @@
  '(ecb-layout-window-sizes (quote (("left14" (0.2564102564102564 . 0.6949152542372882) (0.2564102564102564 . 0.23728813559322035)))))
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
- '(ecb-source-path (quote (("/home/yyj/store0/projects/headshot" "headshot"))))
  '(ecb-tip-of-the-day nil)
  '(ecb-tree-buffer-style (quote ascii-guides))
  '(warning-minimum-level :error))
@@ -154,7 +153,7 @@
 (require 'rinari)
 
 ;;(require 'ruby-electric-brace)
-;;(add-hook 'ruby-mode-hook 'ruby-electric-mode)
+(add-hook 'ruby-mode-hook 'ruby-electric-mode)
 
 ;;不生成备份文件
 (setq make-backup-files t)

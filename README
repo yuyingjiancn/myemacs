@@ -16,5 +16,21 @@ $ git submodule update
 $ gem install plist trollop #这是ruby的
 $ rake convert_bundles # will convert ruby, rails and html bundles from drnic
 
+请到~/.emacs.d/plugins下自行签出rinari 按照下面的方式
+$ git clone git://github.com/eschulte/rinari.git
+$ cd rinari
+$ git submodule init
+$ git submodule update
+
+如果要使用rsense
+按照如下方式做
+下载rsense 0.3
+放到 ~/store0/soft/rsense-0.3
+$ chmod +x ~/store0/soft/rsense-0.3/bin/rsense
+$ cd ~/store0/soft/rsense-0.3/
+$ rvm use 1.9.3@gs1 #这个根据你自己的ruby版本了哦
+$ ruby etc/config.rb > ~/.rsense #生成配置文件
+ok了 开个console 执行 rsense server 就能在emacs里面使用rsense
+
 快捷键设置请查看init.el文件，有详细的说明。
 
