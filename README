@@ -1,8 +1,7 @@
 debian 6.04 emacas 23.2 可用
 ubuntu 11.10 emacs 23.3 可用
 linux使用应该都可以。
-windows下无法使用，因为cedet 1.0.1在windows用emacs内置的编译功能无法通过编译，
-换head版本的则ecb无法使用，ecb对cedet版本有要求，悲剧。
+更新了cedet版本为1.1 ecb使用了最新的snap 可以和cedet 1.1一起使用了
 
 git clone以后
 请到~/.emacs.d/plugins下自行签出yasnippet 按照下面的方式
