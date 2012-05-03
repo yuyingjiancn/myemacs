@@ -1,4 +1,30 @@
-((("ecb-cedet-required-version-max" .
+((("color-theme-blue-erc" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("color-theme-blue-mood" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("color-theme-hober" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("color-theme-robin-hood" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 0 0 0])
+  ("config" .
+   [1 0 0 0 0 0])
+  ("member_space_categories" .
+   [1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("new_record?" .
+   [0 0 0 0 0 0 0 1 0 0 0])
+  ("Base" .
+   [0 1 1 0])
+  ("ActiveModel" .
+   [0 0 0 0 0 0 0 0 0 0 1])
+  ("ActionController" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("archive_scores" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("Member" .
+   [0 0 1 0 0 0])
+  ("new" .
+   [5 1 0])
+  ("ecb-cedet-required-version-max" .
    [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
   ("ecb-cedet-required-version-min" .
    [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
@@ -19,9 +45,9 @@
   ("color-theme-dark-laptop" .
    [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
   ("color-theme-dark-erc" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
   ("color-theme-jsc-dark" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+   [1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 2 0 0 0 1])
   ("ruby-electric-mode" .
    [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
   ("ruby-mode-hook" .
@@ -53,7 +79,7 @@
   ("redo" .
    [7 0 1 0])
   ("global-set-key" .
-   [0 0 0 0 0 0 0 0 0 0 2 0 0 6])
+   [0 0 0 1 0 0 0 0 0 0 2 0 0 6])
   ("nxhtml-mode-hook" .
    [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
   ("Category" .
@@ -69,7 +95,7 @@
   ("clipboard-yank" .
    [0 0 0 0 1 0 0 0 0 0 1 0 0 0])
   ("require" .
-   [4 0 0 0 3 0 0])
+   [7 0 0 0 3 0 0])
   ("undo" .
    [1 0 0 0])
   ("woman" .
@@ -77,7 +103,7 @@
   ("de" .
    [1 0])
   ("kbd" .
-   [1 0 0])
+   [3 0 0])
   ("add-to-list" .
    [1 0 0 0 0 0 0 0 0 0 1])
   ("load-path" .
@@ -127,4 +153,14 @@
   ("open" .
    [0 0 1 1])
   ("color-theme-ld-dark" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])))
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("color-theme-deep-blue" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("color-theme-dark-green" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("color-theme-matrix" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("color-theme-blue-eshell" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("color-theme" .
+   [0 0 0 0 0 1 0 0 0 0 0])))

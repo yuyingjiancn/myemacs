@@ -31,7 +31,8 @@
 	     "~/.emacs.d/plugins/color-theme-6.6.0")
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-comidia)
+(color-theme-robin-hood)
+
 
 (load-file "~/.emacs.d/plugins/cedet-1.1/common/cedet.el")
 (global-ede-mode 1);Enable the Project management system
@@ -55,7 +56,9 @@
  '(ecb-layout-window-sizes nil)
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
- '(ecb-source-path (quote (("/home/yyj/store0/projects/headshot" "headshot"))))
+ '(ecb-source-path (quote (
+			   ("/home/yyj/store0/projects/headshot" "headshot")
+  )))
  '(ecb-tip-of-the-day nil)
  '(ecb-tree-buffer-style (quote ascii-guides))
  '(warning-minimum-level :error))
@@ -158,3 +161,7 @@
 
 ;;不生成备份文件
 (setq make-backup-files t)
+
+
+(global-set-key (kbd "<f11>") 'color-theme-jsc-dark)
+
