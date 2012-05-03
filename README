@@ -31,5 +31,9 @@ $ rvm use 1.9.3@gs1 #这个根据你自己的ruby版本了哦
 $ ruby etc/config.rb > ~/.rsense #生成配置文件
 ok了 开个console 执行 rsense server 就能在emacs里面使用rsense
 
+添加了haskell-mode的支持
+$ cd ~/.emacs.d/plugins
+$ git clone https://github.com/haskell/haskell-mode.git
+
 快捷键设置请查看init.el文件，有详细的说明。
 
