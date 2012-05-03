@@ -165,3 +165,5 @@
 
 (global-set-key (kbd "<f11>") 'color-theme-jsc-dark)
 
+(load "~/.emacs.d/plugins/haskell-mode/haskell-site-file")
+
