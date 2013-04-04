@@ -1,8 +1,5 @@
-(setq inhibit-startup-message t);;关闭启动画面
-(setq make-backup-files nil);;设置无备份
 (global-linum-mode t);;显示行号
 (show-paren-mode t);;括号匹配显示
-(display-time);;显示时间
 (load-theme 'wombat t)
 (require 'package)
 (add-to-list 'package-archives
