@@ -24,7 +24,9 @@
 		      clojure-mode
                       clojure-test-mode
                       nrepl
-		      ac-nrepl))
+		      ac-nrepl
+		      ;;------zencoding---------
+		      zencoding-mode))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
@@ -51,4 +53,25 @@
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'nrepl-mode))
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode);;在clojure中启用彩虹括号
+
+;;nxhtml
+;;下面两行是为了防止emacs 24 nxhtml的很多warning
+(eval-after-load "bytecomp"  
+  '(add-to-list 'byte-compile-not-obsolete-vars  
+                'font-lock-beginning-of-syntax-function))  
+(eval-after-load "bytecomp"  
+  '(add-to-list 'byte-compile-not-obsolete-vars  
+		'font-lock-syntactic-keywords))
+;;加载nxtml  
+(load "~/.emacs.d/my_packages/nxhtml/autostart.el")
+(setq
+ mumamo-background-colors nil
+ nxhtml-global-minor-mode t
+ mumamo-chunk-coloring 'submode-colored
+ nxhtml-skip-welcome t
+ indent-region-mode t
+ rng-nxml-auto-validate-flag nil
+ nxml-degraded t)
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . eruby-nxhtml-mumamo-mode));;erb nxhtml mode
+(add-hook 'nxhtml-mode-hook 'zencoding-mode)
 

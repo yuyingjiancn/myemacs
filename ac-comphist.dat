@@ -1,4 +1,4 @@
-((("rainbow-delimiters" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("rainbow-delimiters-mode" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])))
+((("rainbow-delimiters-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("rainbow-delimiters" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])))
