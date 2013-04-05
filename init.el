@@ -8,21 +8,23 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
-(defvar my-packages '(;;------tabbar------
+(defvar my-packages '(;;------tabbar-------------
 		      tabbar
 		      tabbar-ruler
-		      ;;------yasnippet---
+		      ;;------yasnippet----------
 		      yasnippet
 		      yasnippet-bundle
-		      ;;------auto-complete
+		      ;;------auto-complete------
 		      auto-complete
-		      ;;------clojure-----
+		      ;;------≤ ∫Á¿®∫≈------------
+		      rainbow-delimiters
+		      ;;------paredit------------
+		      paredit
+		      ;;------clojure------------
 		      clojure-mode
                       clojure-test-mode
                       nrepl
-		      ac-nrepl
-		      ;;------paredit-----
-		      paredit))
+		      ac-nrepl))
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
@@ -48,4 +50,5 @@
 (add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'nrepl-mode))
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode);;‘⁄clojure÷–∆Ù”√≤ ∫Á¿®∫≈
 
