@@ -25,6 +25,8 @@
                       clojure-test-mode
                       nrepl
 		      ac-nrepl
+		      ;;------js2-mode----------
+		      js2-mode
 		      ;;------zencoding---------
 		      zencoding-mode))
 (dolist (p my-packages)
@@ -74,4 +76,6 @@
  nxml-degraded t)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . eruby-nxhtml-mumamo-mode));;erb nxhtml mode
 (add-hook 'nxhtml-mode-hook 'zencoding-mode)
+
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode)) 
 
