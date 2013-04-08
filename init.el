@@ -27,6 +27,10 @@
 		      ac-nrepl
 		      ;;------js2-mode----------
 		      js2-mode
+		      ;;------scss-mode---------
+		      scss-mode
+		      ;;------rainbow-mode------
+		      rainbow-mode
 		      ;;------zencoding---------
 		      zencoding-mode))
 (dolist (p my-packages)
@@ -77,5 +81,11 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . eruby-nxhtml-mumamo-mode));;erb nxhtml mode
 (add-hook 'nxhtml-mode-hook 'zencoding-mode)
 
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode)) 
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+;; 
+(defun all-css-modes() (css-mode) (rainbow-mode))
+(defun all-scss-mode() (scss-mode) (rainbow-mode))
+(add-to-list 'auto-mode-alist '("\\.css$" . all-css-modes)) 
+(add-to-list 'auto-mode-alist '("\\.scss$" . all-scss-modes))
 
