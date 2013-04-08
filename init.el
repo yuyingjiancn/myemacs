@@ -83,9 +83,12 @@
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
-;; 
+;;scss css
 (defun all-css-modes() (css-mode) (rainbow-mode))
-(defun all-scss-mode() (scss-mode) (rainbow-mode))
+(defun all-scss-modes() (scss-mode) (rainbow-mode))
 (add-to-list 'auto-mode-alist '("\\.css$" . all-css-modes)) 
 (add-to-list 'auto-mode-alist '("\\.scss$" . all-scss-modes))
+
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(autoload 'ibuffer "ibuffer" "List buffers." t)
 
