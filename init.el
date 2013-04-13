@@ -20,6 +20,17 @@
 		      rainbow-delimiters
 		      ;;------paredit------------
 		      paredit
+		      ;;------ruby---------------
+		      ruby-mode
+		      ruby-test-mode
+		      ruby-block
+		      ruby-compilation
+		      ruby-end
+		      ruby-hash-syntax
+		      ruby-tools
+		      rubyinterpol
+		      ;;------rails--------------
+		      rinari
 		      ;;------clojure------------
 		      clojure-mode
                       clojure-test-mode
