@@ -1,4 +1,6 @@
 elpa/
 auto-save-list/
-ac-comphist.dat
-my_packages/nxhtml/etc/schema/xhtml-loader.rnc
+snippets/
+.last-package-update-day
+recentf
+custom.el
