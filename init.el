@@ -138,9 +138,9 @@
 (use-package company
   :ensure t
   :config
-  (add-hook 'emacs-lisp-mode-hook 'company-mode)
-  (add-hook 'python-mode-hook 'company-mode)
-  (bind-key "C-." 'company-complete-common))
+  (add-hook 'prog-mode-hook 'company-mode)
+  (bind-key "C-." 'company-complete-common)
+  (bind-key "\t" 'company-indent-or-complete-common))
 
 (use-package flycheck
   :ensure t
