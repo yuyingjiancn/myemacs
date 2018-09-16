@@ -180,6 +180,26 @@
   :ensure t
   :after (julia-mode))
 
+(use-package projectile
+  :ensure t)
+
+(use-package rust-mode
+  :mode "\\.rs\\'"
+  :init
+  (setq rust-format-on-save t))
+
+(use-package lsp-mode
+    :init
+    (add-hook 'rust-mode-hook 'lsp-mode))
+
+(use-package lsp-rust
+  :after lisp-mode
+  :config
+  (setq lsp-rust-rls-command '("rustup" "run" "nightly" "rls"))
+  (add-hook 'rust-mode-hook #'lsp-rust-enable))
+
+
+
 ;; helm相关的放在后面，否则安装的时候会出错。
 ;; (use-package helm
 ;;   :ensure t
