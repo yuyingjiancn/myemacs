@@ -1,15 +1,3 @@
-;; 解决windows下保存文件编码为utf-8的问题
-;; 解决elpy在python文件中输入注释是中文就报error in process sentinel: peculiar error: "exited abnormally with code 1"的问题
-;; 解决编辑python文件flake8报UnicodeDecodeError的问题
-;; 注意如果文件中不包含中文，保存仍为ANSI，有中文则保存为UTF-8
-;; python文件头部设定编码的正确写法 coding: utf-8 的utf-8要小写
-(if
-    (string-equal system-type "windows-nt")
-    (progn
-      (prefer-coding-system 'utf-8)
-      (set-default-coding-systems 'utf-8)
-      (set-language-environment 'utf-8)
-      (set-selection-coding-system 'utf-8)))
 
 ;; 中文与外文字体设置1
 (defun set-font (english chinese english-size chinese-size)
@@ -35,9 +23,6 @@
     (set-font "文泉驿等宽微米黑" "文泉驿等宽微米黑" 14 16)
     (message "linux字体设置完毕"))))
 
-(tool-bar-mode 0) 
-;;(menu-bar-mode 0) 
-(scroll-bar-mode 0)
 (global-linum-mode 1) ;;显示行号
 (setq linum-format "%d.")
 
@@ -47,21 +32,12 @@
 (global-set-key (kbd "C-s") 'prefix-command-ctrl-s)
 
 (setq custom-file "~/.emacs.d/custom.el") ;;custom.el 放到单独的文件中
-(load custom-file 'no-error 'no-message)
+(load custom-file)
 
 ;; 快速打开配置文件
 (defun edit-init-file ()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
-;; 教学演示用设置
-(defun reload-init-file ()
-  (interactive)
-  (load-file "~/.emacs.d/init.el"))
-;; 教学演示用设置
-(defun become-teacher ()
-  (interactive)
-  (load-file "~/.emacs.d/teacher.el"))
-
 ;;-------------------------------------------------------------------------------------------
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -86,18 +62,17 @@
   (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
 
-(use-package spacemacs-theme
+;;若干好看的emacs theme 貌似更新比较积极
+(use-package doom-themes
   :ensure t
-  :defer t
-  :init
-  (load-theme 'spacemacs-light t))
+  :config
+  (load-theme 'doom-nord-light t))
 
 (use-package dashboard
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-banner-logo-title "coding for fun")
-  (setq dashboard-startup-banner "~/.emacs.d/logos/emacs-yu-logo.png"))
+  (setq dashboard-banner-logo-title "好好工作，天天向上！"))
 
 (use-package neotree
   :ensure t
@@ -144,16 +119,14 @@
 (use-package flycheck
   :ensure t
   :config
-  (if (string-equal system-type "gnu/linux") ;;windows下不用太卡了
-      (add-hook 'python-mode-hook 'flycheck-mode)))
+  (add-hook 'emacs-lisp-mode-hook 'flycheck-mode)
+  (add-hook 'python-mode-hook 'flycheck-mode))
 
 (use-package elpy
   :ensure t
   :config
   (elpy-enable)
   (setq elpy-rpc--backend "jedi")
-  (if (string-equal system-type "gnu/linux") ;;linux下用flycheck，所以flymake去掉
-      (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
   (setq python-shell-interpreter "jupyter"
 	python-shell-interpreter-args "console --simple-prompt"
 	python-shell-prompt-detect-failure-warning nil)
@@ -179,29 +152,6 @@
 (use-package ess
   :ensure t
   :after (julia-mode))
-
-(use-package projectile
-  :ensure t)
-
-(use-package rust-mode
-  :ensure t
-  :mode "\\.rs\\'"
-  :init
-  (setq rust-format-on-save t))
-
-(use-package lsp-mode
-  :ensure t
-  :init
-  (add-hook 'rust-mode-hook 'lsp-mode))
-
-(use-package lsp-rust
-  :ensure t
-  :after lisp-mode
-  :config
-  (setq lsp-rust-rls-command '("rustup" "run" "nightly" "rls"))
-  (add-hook 'rust-mode-hook #'lsp-rust-enable))
-
-
 
 ;; helm相关的放在后面，否则安装的时候会出错。
 ;; (use-package helm
