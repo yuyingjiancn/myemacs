@@ -42,6 +42,7 @@
 (setq linum-format "%d.")
 
 (setq make-backup-files nil) ;; 禁止产生备份文件
+(setq auto-save-default nil) ;; 禁止产生临时文件
 
 (define-prefix-command 'prefix-command-ctrl-s)
 (global-set-key (kbd "C-s") 'prefix-command-ctrl-s)
