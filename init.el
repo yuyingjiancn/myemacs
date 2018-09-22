@@ -184,6 +184,10 @@
 (use-package projectile
   :ensure t)
 
+(use-package go-mode
+  :ensure t
+  :mode "\\.go\\'")
+
 (use-package rust-mode
   :ensure t
   :mode "\\.rs\\'"
@@ -202,12 +206,16 @@
 
 (use-package lsp-rust
   :ensure t
-  :after lisp-mode
+  :after lsp-mode
   :config
   (setq lsp-rust-rls-command '("rustup" "run" "nightly" "rls"))
   (add-hook 'rust-mode-hook #'lsp-rust-enable))
 
-
+(use-package lsp-go
+  :ensure t
+  :after lsp-mode
+  :config
+  (add-hook 'go-mode-hook #'lsp-go-enable))
 
 ;; helm相关的放在后面，否则安装的时候会出错。
 ;; (use-package helm
