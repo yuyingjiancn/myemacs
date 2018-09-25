@@ -2,6 +2,7 @@ elpa/
 auto-save-list/
 snippets/
 .last-package-update-day
+ac-comphist.dat
 recentf
 custom.el
 abbrev_defs
