@@ -142,24 +142,29 @@
   (bind-key "C-." 'company-complete-common)
   (bind-key "\t" 'company-indent-or-complete-common))
 
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode t))
+
 (use-package flycheck
   :ensure t
   :config
   (if (string-equal system-type "gnu/linux") ;;windows下不用太卡了
       (add-hook 'python-mode-hook 'flycheck-mode)))
 
-(use-package elpy
-  :ensure t
-  :config
-  (elpy-enable)
-  (setq elpy-rpc--backend "jedi")
-  (if (string-equal system-type "gnu/linux") ;;linux下用flycheck，所以flymake去掉
-      (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
-  (setq python-shell-interpreter "jupyter"
-	python-shell-interpreter-args "console --simple-prompt"
-	python-shell-prompt-detect-failure-warning nil)
-  (add-to-list 'python-shell-completion-native-disabled-interpreters
-               "jupyter"))
+;; (use-package elpy
+;;   :ensure t
+;;   :config
+;;   (elpy-enable)
+;;   (setq elpy-rpc--backend "jedi")
+;;   (if (string-equal system-type "gnu/linux") ;;linux下用flycheck，所以flymake去掉
+;;       (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
+;;   (setq python-shell-interpreter "jupyter"
+;;  	python-shell-interpreter-args "console --simple-prompt"
+;;  	python-shell-prompt-detect-failure-warning nil)
+;;   (add-to-list 'python-shell-completion-native-disabled-interpreters
+;;                "jupyter"))
 
 ;; (use-package anaconda-mode
 ;;   :ensure t
@@ -204,12 +209,31 @@
   :init
   (add-hook 'rust-mode-hook 'lsp-mode))
 
+(use-package company-lsp
+  :ensure t
+  :after (company lsp-mode)
+  :config
+  (push 'company-lsp company-backends))
+
+(use-package lsp-ui
+  :ensure t
+  :after lsp-mode
+  :config
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+
+(use-package lsp-python
+  :ensure t
+  :after lsp-mode
+  :init
+  (add-hook 'python-mode-hook #'lsp-python-enable))
+
 (use-package lsp-rust
   :ensure t
   :after lsp-mode
   :config
   (setq lsp-rust-rls-command '("rustup" "run" "nightly" "rls"))
   (add-hook 'rust-mode-hook #'lsp-rust-enable))
+
 
 (use-package lsp-go
   :ensure t
