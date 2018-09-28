@@ -240,7 +240,12 @@
   :ensure t
   :after lsp-mode
   :config
-  (add-hook 'go-mode-hook #'lsp-go-enable))
+  (add-hook 'go-mode-hook (lambda ()
+			    (lsp-go-enable)
+			    (setq-default)
+			    (setq tab-width 2)
+			    (setq standard-indent 2)
+			    (setq indent-tabs-mode nil))))
 
 ;; helm相关的放在后面，否则安装的时候会出错。
 ;; (use-package helm
