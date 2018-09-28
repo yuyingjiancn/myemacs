@@ -1,3 +1,4 @@
+
 ;; 解决windows下保存文件编码为utf-8的问题
 ;; 解决elpy在python文件中输入注释是中文就报error in process sentinel: peculiar error: "exited abnormally with code 1"的问题
 ;; 解决编辑python文件flake8报UnicodeDecodeError的问题
@@ -153,18 +154,18 @@
   (if (string-equal system-type "gnu/linux") ;;windows下不用太卡了
       (add-hook 'python-mode-hook 'flycheck-mode)))
 
-;; (use-package elpy
-;;   :ensure t
-;;   :config
-;;   (elpy-enable)
-;;   (setq elpy-rpc--backend "jedi")
-;;   (if (string-equal system-type "gnu/linux") ;;linux下用flycheck，所以flymake去掉
-;;       (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
-;;   (setq python-shell-interpreter "jupyter"
-;;  	python-shell-interpreter-args "console --simple-prompt"
-;;  	python-shell-prompt-detect-failure-warning nil)
-;;   (add-to-list 'python-shell-completion-native-disabled-interpreters
-;;                "jupyter"))
+(use-package elpy
+  :ensure t
+  :config
+  (elpy-enable)
+  (setq elpy-rpc--backend "jedi")
+  (if (string-equal system-type "gnu/linux") ;;linux下用flycheck，所以flymake去掉
+      (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
+  (setq python-shell-interpreter "jupyter"
+  	python-shell-interpreter-args "console --simple-prompt"
+  	python-shell-prompt-detect-failure-warning nil)
+  (add-to-list 'python-shell-completion-native-disabled-interpreters
+               "jupyter"))
 
 ;; (use-package anaconda-mode
 ;;   :ensure t
@@ -221,11 +222,11 @@
   :config
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
-(use-package lsp-python
-  :ensure t
-  :after lsp-mode
-  :init
-  (add-hook 'python-mode-hook #'lsp-python-enable))
+;; (use-package lsp-python
+;;   :ensure t
+;;   :after lsp-mode
+;;   :init
+;;   (add-hook 'python-mode-hook #'lsp-python-enable))
 
 (use-package lsp-rust
   :ensure t
