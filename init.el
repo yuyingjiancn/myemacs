@@ -244,8 +244,7 @@
 			    (lsp-go-enable)
 			    (setq-default)
 			    (setq tab-width 2)
-			    (setq standard-indent 2)
-			    (setq indent-tabs-mode nil))))
+			    (setq indent-tabs-mode 1))))
 
 ;; helm相关的放在后面，否则安装的时候会出错。
 ;; (use-package helm
