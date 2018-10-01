@@ -235,15 +235,13 @@
   (setq lsp-rust-rls-command '("rustup" "run" "nightly" "rls"))
   (add-hook 'rust-mode-hook #'lsp-rust-enable))
 
-
 (use-package lsp-go
   :ensure t
   :after lsp-mode
   :config
   (add-hook 'go-mode-hook (lambda ()
 			    (lsp-go-enable)
-			    (setq-default)
-			    (setq tab-width 2)
+			    (setq tab-width 4)
 			    (setq indent-tabs-mode 1))))
 
 ;; helm相关的放在后面，否则安装的时候会出错。
