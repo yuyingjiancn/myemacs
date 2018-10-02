@@ -250,20 +250,28 @@
 			    (setq tab-width 4)
 			    (setq indent-tabs-mode 1)))
   (defun set-gopath (gopath)
-  "set GOPATH"
-  (interactive "sGOPATH:")
-  (if (getenv "GOPATH")
-      (progn
-	(-remove-item (getenv "GOPATH") exec-path)
-	(setenv "PATH" (replace-regexp-in-string (concat (getenv "GOPATH") "/bin;") "" (getenv "PATH")))))
-  (setenv "GOPATH" gopath)
-  (let ((gopath-bin (concat gopath "/bin"))
-	(go-langserver (concat gopath "/bin/go-langserver")))
-    (unless (-contains? exec-path gopath-bin)
-      (add-to-list 'exec-path gopath-bin))
-    (unless (string-match gopath-bin (getenv "PATH"))
-      (setenv "PATH" (concat (getenv "PATH") (concat gopath-bin ";"))))
-    (setq lsp-go-executable-path go-langserver))))
+    "set GOPATH"
+    (interactive "sGOPATH:")
+    (if (getenv "GOPATH")
+	(progn
+	  (-remove-item (getenv "GOPATH") exec-path)
+	  (cond
+	   ((string-equal system-type "windows-nt")
+	    (setenv "PATH" (replace-regexp-in-string (concat (getenv "GOPATH") "/bin;") "" (getenv "PATH"))))
+	   ((string-equal system-type "gnu/linux")
+	    (setenv "PATH" (replace-regexp-in-string (concat ":" (getenv "GOPATH") "/bin") "" (getenv "PATH")))))))
+    (setenv "GOPATH" gopath)
+    (let ((gopath-bin (concat gopath "/bin"))
+	  (go-langserver (concat gopath "/bin/go-langserver")))
+      (unless (-contains? exec-path gopath-bin)
+	(add-to-list 'exec-path gopath-bin))
+      (unless (string-match gopath-bin (getenv "PATH"))
+	(cond
+	 ((string-equal system-type "windows-nt")
+	  (setenv "PATH" (concat (getenv "PATH") (concat gopath-bin ";"))))
+	 ((string-equal system-type "gnu/linux")
+	  (setenv "PATH" (concat (getenv "PATH") (concat ":" gopath-bin))))))
+      (setq lsp-go-executable-path go-langserver))))
 
 ;; (use-package helm
 ;;   :ensure t
