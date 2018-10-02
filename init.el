@@ -273,6 +273,9 @@
 	  (setenv "PATH" (concat (getenv "PATH") (concat ":" gopath-bin))))))
       (setq lsp-go-executable-path go-langserver))))
 
+(use-package cider
+  :ensure t)
+
 ;; (use-package helm
 ;;   :ensure t
 ;;   :bind
