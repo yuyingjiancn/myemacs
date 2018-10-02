@@ -265,7 +265,6 @@
       (setenv "PATH" (concat (getenv "PATH") (concat gopath-bin ";"))))
     (setq lsp-go-executable-path go-langserver))))
 
-;; helm相关的放在后面，否则安装的时候会出错。
 ;; (use-package helm
 ;;   :ensure t
 ;;   :bind
