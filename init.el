@@ -160,6 +160,9 @@
   (if (string-equal system-type "gnu/linux") ;;windows下不用太卡了
       (add-hook 'python-mode-hook 'flycheck-mode)))
 
+(use-package projectile
+  :ensure t)
+
 (use-package elpy
   :ensure t
   :config
@@ -193,23 +196,20 @@
   :ensure t
   :after (julia-mode))
 
-(use-package projectile
-  :ensure t)
-
 (use-package go-mode
   :ensure t
   :mode "\\.go\\'")
 
-(use-package rust-mode
-  :ensure t
-  :mode "\\.rs\\'"
-  :init
-  (setq rust-format-on-save t))
+;; (use-package rust-mode
+;;   :ensure t
+;;   :mode "\\.rs\\'"
+;;   :init
+;;   (setq rust-format-on-save t))
 
-(use-package cargo
-  :ensure t
-  :config
-  (add-hook 'rust-mode-hook 'cargo-minor-mode))
+;; (use-package cargo
+;;   :ensure t
+;;   :config
+;;   (add-hook 'rust-mode-hook 'cargo-minor-mode))
 
 (use-package lsp-mode
   :ensure t
@@ -234,12 +234,12 @@
 ;;   :init
 ;;   (add-hook 'python-mode-hook #'lsp-python-enable))
 
-(use-package lsp-rust
-  :ensure t
-  :after lsp-mode
-  :config
-  (setq lsp-rust-rls-command '("rustup" "run" "nightly" "rls"))
-  (add-hook 'rust-mode-hook #'lsp-rust-enable))
+;; (use-package lsp-rust
+;;   :ensure t
+;;   :after lsp-mode
+;;   :config
+;;   (setq lsp-rust-rls-command '("rustup" "run" "nightly" "rls"))
+;;   (add-hook 'rust-mode-hook #'lsp-rust-enable))
 
 (use-package lsp-go
   :ensure t
