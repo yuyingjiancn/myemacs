@@ -1,4 +1,3 @@
-
 ;; 解决windows下保存文件编码为utf-8的问题
 ;; 解决elpy在python文件中输入注释是中文就报error in process sentinel: peculiar error: "exited abnormally with code 1"的问题
 ;; 解决编辑python文件flake8报UnicodeDecodeError的问题
@@ -93,6 +92,13 @@
   :defer t
   :init
   (load-theme 'spacemacs-light t))
+
+(use-package dash
+  :ensure t)
+
+(use-package dash-functional
+  :ensure t
+  :after dash)
 
 (use-package dashboard
   :ensure t
@@ -242,7 +248,18 @@
   (add-hook 'go-mode-hook (lambda ()
 			    (lsp-go-enable)
 			    (setq tab-width 4)
-			    (setq indent-tabs-mode 1))))
+			    (setq indent-tabs-mode 1)))
+  (defun set-gopath (gopath)
+    "set GOPATH"
+    (interactive "sGOPATH:")
+    (setenv "GOPATH" gopath)
+    (let ((gopath-bin (concat gopath "/bin"))
+	  (go-langserver (concat gopath "/bin/go-langserver")))
+      (unless (-contains? exec-path gopath-bin)
+	(add-to-list 'exec-path gopath-bin))
+      (unless (string-match gopath-bin (getenv "PATH"))
+	(setenv "PATH" (concat (getenv "PATH") gopath-bin)))
+      (setq lsp-go-executable-path go-langserver))))
 
 ;; helm相关的放在后面，否则安装的时候会出错。
 ;; (use-package helm
