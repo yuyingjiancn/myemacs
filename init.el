@@ -169,14 +169,12 @@
 ;;   (elpy-enable)
 ;;   (setq elpy-rpc--backend "jedi")
 ;;   (if (string-equal system-type "gnu/linux") ;;linux下用flycheck，所以flymake去掉
-;;       (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
-;;   (add-to-list 'python-shell-completion-native-disabled-interpreters
-;;                "jupyter"))
+;;       (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))))
 
 ;;python的shell默认使用jupyter console
-(setq python-shell-interpreter "jupyter"
-      python-shell-interpreter-args "console --simple-prompt"
-      python-shell-prompt-detect-failure-warning nil)
+;; (setq python-shell-interpreter "jupyter"
+;;       python-shell-interpreter-args "console --simple-prompt"
+;;       python-shell-prompt-detect-failure-warning nil)
 
 (use-package anaconda-mode
   :ensure t
