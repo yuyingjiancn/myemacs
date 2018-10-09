@@ -163,30 +163,31 @@
 (use-package projectile
   :ensure t)
 
-(use-package elpy
-  :ensure t
-  :config
-  (elpy-enable)
-  (setq elpy-rpc--backend "jedi")
-  (if (string-equal system-type "gnu/linux") ;;linux下用flycheck，所以flymake去掉
-      (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
-  (setq python-shell-interpreter "jupyter"
-  	python-shell-interpreter-args "console --simple-prompt"
-  	python-shell-prompt-detect-failure-warning nil)
-  (add-to-list 'python-shell-completion-native-disabled-interpreters
-               "jupyter"))
-
-;; (use-package anaconda-mode
+;; (use-package elpy
 ;;   :ensure t
 ;;   :config
-;;   (add-hook 'python-mode-hook 'anaconda-mode)
-;;   (add-hook 'python-mode-hook 'anaconda-eldoc-mode))
+;;   (elpy-enable)
+;;   (setq elpy-rpc--backend "jedi")
+;;   (if (string-equal system-type "gnu/linux") ;;linux下用flycheck，所以flymake去掉
+;;       (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
+;;   (setq python-shell-interpreter "jupyter"
+;;   	python-shell-interpreter-args "console --simple-prompt"
+;;   	python-shell-prompt-detect-failure-warning nil)
+;;   (add-to-list 'python-shell-completion-native-disabled-interpreters
+;;                "jupyter"))
 
-;;(use-package company-anaconda
-;;  :ensure t
-;;  :after (company)
-;;  :config
-;;  (add-to-list 'company-backends 'company-anaconda))
+(use-package anaconda-mode
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook 'anaconda-mode)
+;;  (add-hook 'python-mode-hook 'anaconda-eldoc-mode) ;;windows下这句加了自动补全会报错，linux下未知。
+  )
+
+(use-package company-anaconda
+  :ensure t
+  :after company
+  :config
+  (add-to-list 'company-backends 'company-anaconda))
 
 ;; 装ess的时候如果没这个会报错
 (use-package julia-mode
