@@ -171,7 +171,7 @@
 ;;   (if (string-equal system-type "gnu/linux") ;;linux下用flycheck，所以flymake去掉
 ;;       (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))))
 
-;;python的shell默认使用jupyter console
+;;python的shell默认使用jupyter console 用了这个anaconda-mode无法正常工作，所以还是不用。
 ;; (setq python-shell-interpreter "jupyter"
 ;;       python-shell-interpreter-args "console --simple-prompt"
 ;;       python-shell-prompt-detect-failure-warning nil)
