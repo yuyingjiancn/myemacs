@@ -180,7 +180,7 @@
   :ensure t
   :config
   (add-hook 'python-mode-hook 'anaconda-mode)
-;;  (add-hook 'python-mode-hook 'anaconda-eldoc-mode) ;;windows下这句加了自动补全会报错，linux下未知。
+  ;;  (add-hook 'python-mode-hook 'anaconda-eldoc-mode) ;;windows下这句加了自动补全会报错，linux下未知。
   )
 
 (use-package company-anaconda
