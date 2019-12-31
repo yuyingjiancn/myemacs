@@ -39,7 +39,7 @@
 ;;(menu-bar-mode 0) 
 (scroll-bar-mode 0)
 (global-linum-mode 1) ;;显示行号
-(setq linum-format "%d.")
+(setq linum-format "%d")
 
 (setq make-backup-files nil) ;; 禁止产生备份文件
 (setq auto-save-default nil) ;; 禁止产生临时文件
@@ -189,93 +189,7 @@
   :config
   (add-to-list 'company-backends 'company-anaconda))
 
-;; 装ess的时候如果没这个会报错
-(use-package julia-mode
-  :ensure t)
 
-(use-package ess
-  :ensure t
-  :after (julia-mode))
-
-(use-package go-mode
-  :ensure t
-  :mode "\\.go\\'")
-
-;; (use-package rust-mode
-;;   :ensure t
-;;   :mode "\\.rs\\'"
-;;   :init
-;;   (setq rust-format-on-save t))
-
-;; (use-package cargo
-;;   :ensure t
-;;   :config
-;;   (add-hook 'rust-mode-hook 'cargo-minor-mode))
-
-(use-package lsp-mode
-  :ensure t
-  :init
-  (add-hook 'rust-mode-hook 'lsp-mode))
-
-(use-package company-lsp
-  :ensure t
-  :after (company lsp-mode)
-  :config
-  (push 'company-lsp company-backends))
-
-(use-package lsp-ui
-  :ensure t
-  :after lsp-mode
-  :config
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
-
-;; (use-package lsp-python
-;;   :ensure t
-;;   :after lsp-mode
-;;   :init
-;;   (add-hook 'python-mode-hook #'lsp-python-enable))
-
-;; (use-package lsp-rust
-;;   :ensure t
-;;   :after lsp-mode
-;;   :config
-;;   (setq lsp-rust-rls-command '("rustup" "run" "nightly" "rls"))
-;;   (add-hook 'rust-mode-hook #'lsp-rust-enable))
-
-(use-package lsp-go
-  :ensure t
-  :after lsp-mode
-  :config
-  (add-hook 'go-mode-hook (lambda ()
-			    (lsp-go-enable)
-			    (setq tab-width 4)
-			    (setq indent-tabs-mode 1)))
-  (defun set-gopath (gopath)
-    "set GOPATH"
-    (interactive "sGOPATH:")
-    (if (getenv "GOPATH")
-	(progn
-	  (-remove-item (getenv "GOPATH") exec-path)
-	  (cond
-	   ((string-equal system-type "windows-nt")
-	    (setenv "PATH" (replace-regexp-in-string (concat (getenv "GOPATH") "/bin;") "" (getenv "PATH"))))
-	   ((string-equal system-type "gnu/linux")
-	    (setenv "PATH" (replace-regexp-in-string (concat ":" (getenv "GOPATH") "/bin") "" (getenv "PATH")))))))
-    (setenv "GOPATH" gopath)
-    (let ((gopath-bin (concat gopath "/bin"))
-	  (go-langserver (concat gopath "/bin/go-langserver")))
-      (unless (-contains? exec-path gopath-bin)
-	(add-to-list 'exec-path gopath-bin))
-      (unless (string-match gopath-bin (getenv "PATH"))
-	(cond
-	 ((string-equal system-type "windows-nt")
-	  (setenv "PATH" (concat (getenv "PATH") (concat gopath-bin ";"))))
-	 ((string-equal system-type "gnu/linux")
-	  (setenv "PATH" (concat (getenv "PATH") (concat ":" gopath-bin))))))
-      (setq lsp-go-executable-path go-langserver))))
-
-(use-package cider
-  :ensure t)
 
 ;; (use-package helm
 ;;   :ensure t
